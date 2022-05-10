@@ -21,9 +21,9 @@ CHIP Computer {
     PARTS:
     // Put your code here:
 
-    ROM32K(address=pc,out=instruction);
+    ROM32K(address=pc,out=instruction);//the address from the PC is the input of the RAM32K, outputs the instruction to the CPU
 
-    CPU(inM=inM,instruction=instruction,reset=reset,outM=outM,writeM=writeM,addressM=addressM,pc=pc);
+    CPU(inM=inM,instruction=instruction,reset=reset,outM=outM,writeM=writeM,addressM=addressM,pc=pc); 
 
-    Memory(in=outM,load=writeM,address=addressM,out=inM);
+    Memory(in=outM,load=writeM,address=addressM,out=inM); 
 }
